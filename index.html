@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central do Vestibulando</title>
+    <meta
+      name="description"
+      content="Portal centralizado de vestibulares, provas, gabaritos, calendário e materiais de estudo."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrapper">
+        <div class="brand" aria-label="Central do Vestibulando">
+          <div class="brand-mark">C</div>
+          <div>
+            <strong>Central do</strong>
+            <span>Vestibulando</span>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#vestibulares">Vestibulares</a>
+          <a href="#calendario">Calendário</a>
+          <a href="#provas">Provas anteriores</a>
+          <a href="#materiais">Materiais</a>
+          <a href="#planejamento">Planejamento</a>
+          <a href="#instituicoes">Instituições</a>
+          <a href="#noticias">Notícias</a>
+        </nav>
+
+        <button class="nav-button">Entrar</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Portal completo para vestibulandos</span>
+            <h1>Centralize provas, editais, datas e materiais em um só lugar.</h1>
+            <p>
+              Acompanhe inscrições, gabaritos, calendários, conteúdos e oportunidades em uma
+              plataforma moderna pensada para facilitar a preparação de quem quer entrar na
+              universidade.
+            </p>
+
+            <form class="hero-search" aria-label="Pesquisa rápida">
+              <input
+                type="search"
+                id="quickSearch"
+                placeholder="Busque por instituição, vestibular, curso ou cidade"
+              />
+              <button type="submit">Pesquisar</button>
+            </form>
+
+            <div class="tag-list">
+              <span>ENEM</span>
+              <span>Fuvest</span>
+              <span>Unicamp</span>
+              <span>Unesp</span>
+              <span>UFPR</span>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-card featured">
+              <div class="panel-header">
+                <span class="status status-live">Inscrições abertas</span>
+                <span>Hoje</span>
+              </div>
+              <h3>Vestibulares em destaque</h3>
+              <ul>
+                <li><strong>Fuvest</strong> <span>Inscrições até 18/09</span></li>
+                <li><strong>Unicamp</strong> <span>Prova em 09/12</span></li>
+                <li><strong>Unesp</strong> <span>Resultado previsto para 15/12</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics">
+        <div class="container metrics-grid">
+          <article class="metric-card accent">
+            <span class="metric-label">Vestibulares</span>
+            <strong>42</strong>
+            <small>processos em análise</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Próximas provas</span>
+            <strong>18</strong>
+            <small>nos próximos 30 dias</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Editais ativos</span>
+            <strong>26</strong>
+            <small>atualizados recentemente</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Materiais</span>
+            <strong>1.3k</strong>
+            <small>recursos disponíveis</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="vestibulares">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Catálogo</span>
+              <h2>Vestibulares e processos seletivos</h2>
+            </div>
+            <a href="#" class="link-button">Ver todos</a>
+          </div>
+
+          <div class="toolbar">
+            <label>
+              Estado
+              <select id="filterState">
+                <option value="todos">Todos</option>
+                <option value="SP">SP</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="PR">Paraná</option>
+                <option value="DF">Distrito Federal</option>
+              </select>
+            </label>
+
+            <label>
+              Instituição
+              <select id="filterInstitution">
+                <option value="todas">Todas</option>
+                <option value="USP">USP</option>
+                <option value="UNICAMP">UNICAMP</option>
+                <option value="UNESP">UNESP</option>
+                <option value="UFPR">UFPR</option>
+                <option value="IFSP">IFSP</option>
+                <option value="UNB">UNB</option>
+              </select>
+            </label>
+
+            <label>
+              Ordenar por
+              <select id="sortBy">
+                <option value="relevancia">Relevância</option>
+                <option value="inscricao">Data de inscrição</option>
+                <option value="prova">Data da prova</option>
+                <option value="instituicao">Instituição</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="vestibularesGrid" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <section class="content-section alt" id="calendario">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Calendário</span>
+              <h2>Próximos eventos e datas importantes</h2>
+            </div>
+            <button class="mini-button">Exportar</button>
+          </div>
+
+          <div class="calendar-layout">
+            <div class="calendar-card">
+              <div class="calendar-header">
+                <h3>Setembro 2026</h3>
+                <div class="calendar-controls">
+                  <button>◀</button>
+                  <button>▶</button>
+                </div>
+              </div>
+              <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
+
+            <aside class="event-aside" id="eventList"></aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="provas">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Banco de provas</span>
+              <h2>Provas anteriores e gabaritos</h2>
+            </div>
+          </div>
+
+          <div class="search-row">
+            <input id="examSearch" type="search" placeholder="Pesquisar por instituição, matéria ou ano" />
+          </div>
+
+          <div id="provasGrid" class="exam-grid"></div>
+        </div>
+      </section>
+
+      <section class="content-section alt" id="materiais">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Estudos</span>
+              <h2>Materiais e conteúdos por disciplina</h2>
+            </div>
+          </div>
+
+          <div id="disciplinasGrid" class="subjects-grid"></div>
+
+          <div class="comparison-wrap">
+            <h3>Comparativo de conteúdos por vestibular</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Disciplina</th>
+                    <th>FATEC</th>
+                    <th>UNESP</th>
+                    <th>UNICAMP</th>
+                  </tr>
+                </thead>
+                <tbody id="compareTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="planejamento">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Planejamento</span>
+              <h2>Estratégia de estudos</h2>
+            </div>
+          </div>
+
+          <div id="planGrid" class="plan-grid"></div>
+        </div>
+      </section>
+
+      <section class="content-section alt" id="instituicoes">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Instituições</span>
+              <h2>Universidades e centros de ensino</h2>
+            </div>
+          </div>
+
+          <div id="institutionsGrid" class="institutions-grid"></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="noticias">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Atualizações</span>
+              <h2>Notícias e novidades do cenário</h2>
+            </div>
+          </div>
+
+          <div id="newsGrid" class="news-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <div class="brand footer-brand">
+            <div class="brand-mark">C</div>
+            <div>
+              <strong>Central do</strong>
+              <span>Vestibulando</span>
+            </div>
+          </div>
+        </div>
+        <p>Seu guia completo para provas, editais e preparação.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
