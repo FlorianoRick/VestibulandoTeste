@@ -1,0 +1,9 @@
+{
+  "name": "central-do-vestibulando",
+  "version": "1.0.0",
+  "description": "Portal centralizado para vestibulares e preparação acadêmica",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}

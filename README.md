@@ -5,9 +5,18 @@ Portal centralizado para acompanhamento de vestibulares, editais, provas, gabari
 ## Como visualizar localmente
 
 1. Abra a pasta do projeto.
-2. Inicie um servidor local simples:
-   - `python -m http.server 8000`
-3. Acesse: `http://localhost:8000`
+2. Inicie o servidor:
+   - `npm start`
+3. Acesse: `http://localhost:3000`
+
+## Deploy no Render
+
+Este projeto já contém configuração para deploy em Render usando o arquivo `render.yaml` e um servidor Node.js.
+
+1. Crie uma conta em [Render](https://render.com/).
+2. Conecte este repositório ao Render.
+3. O serviço será detectado automaticamente pelo `render.yaml`.
+4. Faça o deploy e a aplicação ficará disponível publicamente pela URL gerada pelo Render.
 
 ## Funcionalidades incluídas
 
